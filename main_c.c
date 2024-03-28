@@ -5,7 +5,7 @@
 #include <string.h>
 #include <time.h>
 
-#define THRESHOLD 128 // Define the threshold value for pixel conversion.
+#define THRESHOLD 1 // Define the threshold value for pixel conversion.
 
 // Function prototypes.
 void transform_img(const char *dir_path);

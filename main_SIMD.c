@@ -5,7 +5,7 @@
 #include <string.h>
 #include <time.h>
 
-#define THRESHOLD 128
+#define THRESHOLD 10
 
 void transform_img(const char *dir_path);
 void process_image(const char *image_path);

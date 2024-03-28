@@ -21,7 +21,9 @@ def display_image_from_file(img_infos):
     plt.imsave(f"images_readable/{file_path.split('/')[1].split('.')[0]}.png", img_array, cmap='gray')
     #plt.show()
     
-
+def update_saved_images(imgs):
+    for i in range(len(imgs)):
+        display_image_from_file(imgs[i])
 
 imgs_in=[
     ['input/Amelia_256x256.raw',256,256],
@@ -41,5 +43,7 @@ imgs_out=[
     ['output/parrots_512x256_out_C.raw',512,256],
     ['output/Quentin_512x512_out_C.raw',512,512]]
 
-for i in range(len(imgs_in)):
-    display_image_from_file(imgs_out[i])
+#update_saved_images(imgs=imgs_in)
+update_saved_images(imgs=imgs_out)
+
+
