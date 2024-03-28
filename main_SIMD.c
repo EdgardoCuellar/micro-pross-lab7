@@ -15,7 +15,7 @@ int main() {
     
     start = clock();
 
-    const char *dir_path = "./input";
+    const char *dir_path = "/input";
     transform_img(dir_path);
 
     end = clock();
