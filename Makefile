@@ -1,6 +1,6 @@
 make:
 	gcc -o Main.o Main.c
-	./Main.o
+	./Main.o 127
 
 convert:
 	python3 0_raw_img_displayer.py

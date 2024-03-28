@@ -16,8 +16,8 @@ void threshold_c(unsigned char* image, unsigned char* modified, unsigned char th
 void threshold_smid(unsigned char* image, unsigned char* modified, unsigned char threshold, int size);
 void write_out(char *file_name, char *extension, unsigned char *dst, int size);
 long size_of_file(char *file_name);
-void run_image(char *file_name);
-void run_all_images_from_dir(const char *dir_path);
+void run_image(char *file_name,int threshold);
+void run_all_images_from_dir(const char *dir_path,int threshold);
 
 
 //___Threshold Algo
@@ -109,9 +109,9 @@ long size_of_file(char *file_name) {
     return size;
 }
 
-void run_image(char *file_name){
+void run_image(char *file_name,int  threshold){
 	long size = size_of_file(file_name);
-	int  threshold = 127;
+	
 
     // allocate memory
 	unsigned char* src = (unsigned char *) malloc (size*sizeof(unsigned char));
@@ -166,7 +166,7 @@ void run_image(char *file_name){
 	free(src); 
 	free(dst);
 }
-void run_all_images_from_dir(const char *dir_path) {
+void run_all_images_from_dir(const char *dir_path,int  threshold) {
     DIR *dir;
     struct dirent *entry;
 
@@ -184,7 +184,7 @@ void run_all_images_from_dir(const char *dir_path) {
                 fprintf(stderr, "Not enough space allocated for creating the file_path for %s/%s\n", dir_path, entry->d_name);
                 // Handle the error, potentially skipping this file or aborting the operation.
             } else {
-                run_image(file_path);
+                run_image(file_path,threshold);
             }
         }
     }
@@ -219,13 +219,15 @@ void write_out(char *file_name, char *extension, unsigned char *dst, int size) {
 
 
 
-//___Main
-int main() {
+//___Main Function
+int main(int argc, char **argv){
+
+    int  threshold = 127;
 
 	clock_t start, end;
     start = clock();
 
-	run_all_images_from_dir("./input");	
+	run_all_images_from_dir("./input",threshold);	
 
 	end = clock();
     float time = (float)(end - start) / CLOCKS_PER_SEC;
