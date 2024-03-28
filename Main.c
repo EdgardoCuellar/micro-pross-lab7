@@ -1,8 +1,21 @@
 // Group 14 Info 
-// Cuellar Sanchez Edgardo
-// Faek Ilias
-// Messast Haïtham
-// Nehili Adel
+    // Cuellar Sanchez Edgardo
+    // Faek Ilias
+    // Messast Haïtham
+    // Nehili Adel
+
+
+/*More Info in the README.
+
+    Step to Run the program completly:
+        1)Make sure the .raw format images are in the "input" file
+        2)Run the Makefile with the command "make"
+            2.1)If you want to modify the treshold, go to the main function and modify it.
+            
+        3)If you want to display as .png:
+            3.1)Run the command "make convert"
+        4)Run the command "make clean" if needed
+*/
 
 #include <stdlib.h>
 #include <stdio.h>
