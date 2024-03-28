@@ -1,0 +1,46 @@
+Step to Run the program completly:
+    1)Make sure the raw images are in the "input" file
+    2)Run the Makefile with the command "make"
+    3)If you want to display as .png:
+        3.1)Run the command "make convert"
+    4)Run the command "make clean" if needed
+
+CONCLUSION:
+    1) Benchmark:
+        Computing time for ./input/Amelia_256x256.raw in C : 0.000187 seconds
+        Computing time for ./input/Amelia_256x256.raw in SIMD: 0.000012 seconds
+        Time ratio, Time_C/Time_SIMD : Time_SIMD was 1558.333252 \% faster!
+        
+        Computing time for ./input/Angela_512x512.raw in C : 0.000846 seconds
+        Computing time for ./input/Angela_512x512.raw in SIMD: 0.000042 seconds
+        Time ratio, Time_C/Time_SIMD : Time_SIMD was 2014.285645 \% faster!
+        
+        Computing time for ./input/Escher.raw in C : 0.003321 seconds
+        Computing time for ./input/Escher.raw in SIMD: 0.000138 seconds
+        Time ratio, Time_C/Time_SIMD : Time_SIMD was 2406.521484 \% faster!
+        
+        Computing time for ./input/Ken_512x512.raw in C : 0.000729 seconds
+        Computing time for ./input/Ken_512x512.raw in SIMD: 0.000032 seconds
+        Time ratio, Time_C/Time_SIMD : Time_SIMD was 2278.125000 \% faster!
+        
+        Computing time for ./input/kid.raw in C : 0.002852 seconds
+        Computing time for ./input/kid.raw in SIMD: 0.000149 seconds
+        Time ratio, Time_C/Time_SIMD : Time_SIMD was 1914.093994 \% faster!
+        
+        Computing time for ./input/parrots_512x256.raw in C : 0.000342 seconds
+        Computing time for ./input/parrots_512x256.raw in SIMD: 0.000018 seconds
+        Time ratio, Time_C/Time_SIMD : Time_SIMD was 1900.000000 \% faster!
+        
+        Computing time for ./input/Quentin_512x512.raw in C : 0.000761 seconds
+        Computing time for ./input/Quentin_512x512.raw in SIMD: 0.000028 seconds
+        Time ratio, Time_C/Time_SIMD : Time_SIMD was 2717.856934 \% faster!
+        
+        All time spent: 0.015155
+    
+    2) Conclusions:
+        Speed Improvement: The SIMD implementation is significantly faster than the C implementation for every image processed. 
+            The performance gain is substantial, ranging from approximately 1500\% to as high as 2700\% faster.
+
+        Consistency Across Different Image Sizes: Whatever the raw file size, the SIMD implementation is always significantly faster than the C one.
+
+        From a performance analysis standpoint, these results demonstrate the potential of SIMD optimizations to improve the speed of image processing operations.
