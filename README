@@ -38,8 +38,8 @@ CONCLUSION:
         All time spent: 0.015155
     
     2) Conclusions:
-        Speed Improvement: The SIMD implementation is significantly faster than the C implementation for every image processed. 
-            The performance gain is substantial, ranging from approximately 1500\% to as high as 2700\% faster.
+        Speed Improvement: The SIMD implementation is significantly faster than the C implementation for every image processed. The performance gain is substantial, ranging from 
+            approximately 1500\% to as high as 2700\% faster.
 
         Consistency Across Different Image Sizes: Whatever the raw file size, the SIMD implementation is always significantly faster than the C one.
 
